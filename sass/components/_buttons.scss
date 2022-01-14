@@ -1,0 +1,17 @@
+.btn {
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  font-size: calc(clamp(1rem, 0.93rem + 0.36vw, 1.25rem));
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+
+  &-primary {
+    background-color: $primaryColor;
+    color: $white;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

@@ -1,0 +1,28 @@
+$medium: 768;
+$large: 1024;
+$xl: 1440;
+$xxl: 1920;
+
+@mixin medium {
+  @media (min-width: ($medium * 1px)) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: ($large * 1px)) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: ($xl * 1px)) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: ($xxl * 1px)) {
+    @content;
+  }
+}

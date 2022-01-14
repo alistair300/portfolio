@@ -1,0 +1,92 @@
+body {
+  min-height: 100vh;
+  background-color: $backgroundColor;
+  color: $white;
+  width: calc(min(90%, 70rem));
+  margin-inline: auto;
+}
+
+#particles-js {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
+header,
+aside,
+.btn {
+  position: relative;
+  z-index: 10;
+}
+
+#home {
+  display: grid;
+
+  grid-template: auto 1fr auto / auto 1fr auto;
+
+  & header {
+    grid-column: 1 / 4;
+  }
+
+  & main {
+    grid-column: 1 / 4;
+
+    @include large {
+      grid-column: 2 / 4;
+    }
+  }
+
+  & aside {
+    grid-row: 3 / 4;
+    grid-column: 1 / 4;
+
+    @include large {
+      grid-row: auto;
+      grid-column: 1 / 2;
+    }
+  }
+}
+
+// social links
+.social {
+  padding: 2rem 0;
+
+  @include large {
+    margin-top: 15rem;
+  }
+
+  &--list {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    @include large {
+      flex-direction: column;
+      margin-left: 0.5rem;
+      gap: 2rem;
+    }
+
+    a {
+      color: $gray;
+      transition: color 0.3s ease;
+      padding: 0.5rem;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+// hero
+.hero {
+  margin-top: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  & .btn {
+    margin-top: 1rem;
+  }
+}

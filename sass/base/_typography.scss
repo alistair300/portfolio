@@ -1,0 +1,19 @@
+// font-family: 'Poppins', sans-serif;
+// font-family: 'Raleway', sans-serif;
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.heading {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: calc(clamp(2rem, 1.57rem + 2.14vw, 3.5rem));
+}
+
+h5 {
+  font-size: calc(clamp(1.25rem, 1.11rem + 0.71vw, 1.75rem));
+  color: $gray;
+}
