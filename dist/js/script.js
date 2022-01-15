@@ -82,14 +82,11 @@ document.addEventListener('mousemove', (e) => {
 });
 
 // nav bar
-const nav = document.getElementById('nav');
+const header = document.getElementById('header');
 const toggleBtn = document.getElementById('toggle-btn');
-const closeBtn = document.getElementById('close-btn');
+
+console.log(toggleBtn);
 
 toggleBtn.addEventListener('click', () => {
-  nav.classList.add('open');
-});
-
-closeBtn.addEventListener('click', () => {
-  nav.classList.remove('open');
+  header.classList.toggle('open');
 });

@@ -1,0 +1,278 @@
+/* variables */
+:root {
+  --primary-color: hsl(185, 100%, 31%);
+  --primary-color-dark: hsl(190, 100%, 23%);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  --gray: hsl(0, 0%, 70%);
+  --background-color: hsl(0, 0%, 6%);
+
+  /* toggler width */
+  --toggle-size: 36px;
+}
+
+/* body */
+html,
+body {
+  font-family: 'Raleway', sans-serif;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+/* additional reset */
+button {
+  background-color: transparent;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* loading screen */
+.load-container {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.loading-screen {
+  position: relative;
+  background-color: var(--primary-color);
+  width: 0%;
+  height: 100%;
+}
+
+/* helper class */
+.container {
+  width: min(90%, 70rem);
+  margin-inline: auto;
+}
+
+.z-10 {
+  position: relative;
+  z-index: 10;
+}
+
+/* particles js */
+#particles-js {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* typography */
+.heading {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  color: var(--white);
+  font-size: clamp(2rem, 1.5rem + 2.5vw, 3.75rem);
+}
+
+.sub-heading {
+  color: var(--gray);
+  letter-spacing: 2px;
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(1.25rem, 1.04rem + 1.07vw, 2rem);
+  margin: 0.5rem 0 1.5rem;
+}
+
+/* buttons */
+.btn {
+  padding: 0.875rem 1.75rem;
+  border-radius: 999px;
+  font-family: 'Poppins', sans-serif;
+  transition: all 250ms ease-in-out;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+/* header */
+header {
+  padding-block: clamp(1.5rem, 1.21rem + 1.43vw, 2.5rem);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo img {
+  width: clamp(3rem, 2.71rem + 1.43vw, 4rem);
+}
+
+header .nav-toggler {
+  width: var(--toggle-size);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+}
+
+header .nav-toggler {
+  min-height: 30px;
+}
+
+.nav-toggler span {
+  display: inline-block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.nav-toggler span:first-child {
+  width: calc(var(--toggle-size) * 0.5);
+}
+
+.nav-toggler:hover span:is(:first-child, :nth-child(2)) {
+  width: 100%;
+}
+
+.nav-toggler span:nth-child(2) {
+  width: calc(var(--toggle-size) * 0.65);
+}
+
+/* navbar */
+.main-nav {
+  position: fixed;
+  inset: 0;
+  background-color: var(--black);
+  z-index: 25;
+  height: 0%;
+  overflow: hidden;
+  transition: height 300ms ease;
+}
+
+.main-nav ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  font-size: clamp(2rem, 1.57rem + 2.14vw, 3.5rem);
+  position: relative;
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: var(--white);
+  transition: width 300ms ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+header.open .main-nav {
+  height: 100%;
+}
+
+/* change the toggler button when nav is open */
+header.open .nav-toggler span {
+  position: absolute;
+}
+
+header.open .nav-toggler span:first-child {
+  width: 100%;
+  transform: rotate(45deg);
+}
+
+header.open .nav-toggler span:nth-child(2) {
+  opacity: 0;
+}
+
+header.open .nav-toggler span:last-child {
+  transform: rotate(-45deg);
+}
+
+/* MAIN */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - min(clamp(1.25rem, -6.79rem + 40.18vw, 12.5rem)));
+}
+
+.main-container > .hero {
+  flex: 1;
+  order: -1;
+}
+
+/* hero content */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* social nav */
+.social-nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-nav a {
+  display: inline-block;
+  color: var(--gray);
+  transition: all 300ms ease-in-out;
+}
+
+.social-nav a:hover {
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+/* media queries */
+@media (min-width: 769px) {
+  .main-container {
+    flex-direction: row;
+  }
+
+  .main-container > .hero {
+    order: 1;
+  }
+
+  .social-nav ul {
+    flex-direction: column;
+    margin-left: 1rem;
+    gap: 2rem;
+  }
+}

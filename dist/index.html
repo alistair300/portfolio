@@ -23,87 +23,91 @@
     />
 
     <!-- css -->
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Alistair | Portfolio Website</title>
   </head>
-  <body data-barba="wrapper" id="home">
+  <body data-barba="wrapper">
     <!-- particles -->
     <div id="particles-js"></div>
 
     <!-- custom cursor -->
-    <div class="cursor"></div>
+    <!-- <div class="cursor"></div> -->
 
     <div class="load-container">
       <div class="loading-screen"></div>
     </div>
 
-    <!-- header -->
-    <header class="header">
-      <!-- logo -->
-      <!-- <img src="./assets/logo.png" alt="Home Page" class="header__logo" /> -->
-      <a href="#" class="header__logo"><h5>A</h5></a>
+    <header id="header">
+      <div class="container header-container">
+        <!-- logo -->
+        <div class="logo z-10">
+          <a href="#">
+            <img src="./assets/logo.png" />
+            <span class="sr-only">Logo of the webiste.</span>
+          </a>
+        </div>
 
-      <!-- hamburger menu -->
-      <button class="header__toggler" id="toggle-btn">
-        <span class="header__toggler--item"></span
-        ><span class="header__toggler--item"></span
-        ><span class="header__toggler--item"></span>
-      </button>
+        <!-- nav -->
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+              <a href="./projects.html">Projects</a>
+            </li>
+            <li>
+              <a href="./contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- toggler -->
+        <button class="nav-toggler z-10" id="toggle-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
 
-    <!-- social nav -->
-    <aside>
-      <nav class="social">
-        <ul class="social--list">
-          <li class="social--item">
-            <a href="#"
-              ><i class="fab fa-github fa-2x" title="Github Account"></i
-              ><span class="sr-only">View Github Account</span></a
-            >
-          </li>
-          <li class="social--item">
-            <a href="#"
-              ><i class="fab fa-linkedin fa-2x"></i
-              ><span class="sr-only">View LinkedIn Account</span></a
-            >
-          </li>
-          <li class="social--item">
-            <a href="#"
-              ><i class="fab fa-twitter fa-2x"
-                ><span class="sr-only">View Twitter Account</span></i
-              ></a
-            >
-          </li>
-        </ul>
-      </nav>
-    </aside>
-
-    <!-- navbar -->
-    <nav class="header__nav" id="nav">
-      <div class="header__nav--close" id="close-btn">&times;</div>
-
-      <ul class="header__nav--list">
-        <li class="header__nav--item">
-          <a href="#" class="header__nav--link">Home</a>
-        </li>
-        <li class="header__nav--item">
-          <a href="./projects.html" class="header__nav--link">Projects</a>
-        </li>
-        <li class="header__nav--item">
-          <a href="./contact.html" class="header__nav--link">Contact</a>
-        </li>
-      </ul>
-    </nav>
-
     <main data-barba="container" data-barba-namespace="home">
-      <!-- hero -->
-      <section class="hero">
-        <h1 class="heading">Lorem, ipsum dolor.</h1>
-        <h5 class="heading">Lorem, ipsum.</h5>
-        <a href="#" class="btn btn-primary">Click</a>
-      </section>
+      <div class="container main-container">
+        <!-- social nav -->
+        <nav class="social-nav">
+          <ul>
+            <li class="z-10">
+              <a href="#"
+                ><i class="fab fa-github fa-2x"></i
+                ><span class="sr-only">View Github Account</span></a
+              >
+            </li>
+            <li class="z-10">
+              <a href="#"
+                ><i class="fab fa-twitter fa-2x"></i
+                ><span class="sr-only">View Twitter Account</span></a
+              >
+            </li>
+            <li class="z-10">
+              <a href="#"
+                ><i class="fab fa-linkedin fa-2x"></i
+                ><span class="sr-only">View Linked-In Account</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- hero -->
+        <section class="hero">
+          <h1 class="heading">Lorem, ipsum dolor.</h1>
+          <div class="sub-heading">Lorem, ipsum.</div>
+          <a href="./projects.html" class="btn btn-primary z-10"
+            >View my Work</a
+          >
+        </section>
+      </div>
     </main>
 
+    <!-- -------------------- javascript ------------------------ -->
     <!-- jquery -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
